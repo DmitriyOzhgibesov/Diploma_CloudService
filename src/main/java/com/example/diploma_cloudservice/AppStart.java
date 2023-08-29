@@ -17,16 +17,16 @@ public class AppStart implements CommandLineRunner {
     @Override
     public void run(String... args) {
         userRepository.save(User.builder()
-                .login("address1@mail.ru")
-                .password(passwordEncoder.encode("p111"))
+                .login("user1@gg.ru")
+                .password(passwordEncoder.encode("pass1"))
                 .build());
         userRepository.save(User.builder()
-                .login("address2@mail.ru")
-                .password(passwordEncoder.encode("p222"))
+                .login("user2@gg.ru")
+                .password(passwordEncoder.encode("pass2"))
                 .build());
         userRepository.save(User.builder()
-                .login("address3@mail.ru")
-                .password(passwordEncoder.encode("p333"))
+                .login("user3@gg.ru")
+                .password(passwordEncoder.encode("pass3"))
                 .build());
     }
 }

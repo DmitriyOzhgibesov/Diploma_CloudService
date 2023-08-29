@@ -29,12 +29,12 @@ public class FileService {
     AuthorizationRepository authorizationRepository;
     UserRepository userRepository;
 
-    public void uploadFile(String authToken, String filename, File file) {
+    public void uploadFile(String authToken, String filename, MultipartFile file) throws IOException {
         final User user = getUser(authToken);
         if (user == null) {
             throw new UnauthorizedException("Unauthorized error");
         }
-        fileRepository.save(new File(filename, file.getSize(), file.getType(), file.getContent(), user));
+        fileRepository.save(new File(filename, file.getSize(), file.getContentType(), file.getBytes(), user));
         log.info("User {} upload file {}", user.getLogin(), filename);
     }
 

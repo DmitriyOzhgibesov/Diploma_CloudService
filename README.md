@@ -33,9 +33,9 @@ FRONT-приложение использует header auth-token, в котор
 
 ## Логины и пароли, необходимые для авторизации
 
-Login: `address1@mail.ru`, password: `p111`
+Login: `user1@gg.ru`, password: `pass1`
 
-Login: `address2@mail.ru`, password: `p222`
+Login: `user2@gg.ru`, password: `pass2`
 
-Login: `address3@mail.ru`, password: `p333`
+Login: `user3@gg.ru`, password: `pass3`
 

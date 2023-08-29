@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.example.diploma_cloudservice.Entity.File;
 import com.example.diploma_cloudservice.Service.FileService;
 
+import java.io.IOException;
 import java.util.Map;
 
 @RestController
@@ -22,7 +23,7 @@ public class FileController {
 
     @PostMapping()
     public ResponseEntity<?> uploadFile(@RequestHeader("auth-token") String authToken,
-                                        @RequestParam("filename") String filename, File file) {
+                                        @RequestParam("filename") String filename,@RequestParam(value = "file") MultipartFile file) throws IOException {
         service.uploadFile(authToken, filename, file);
         return ResponseEntity.ok(HttpStatus.OK);
     }
